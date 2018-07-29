@@ -11,7 +11,7 @@ The response is a list of sentances each with:
 - *posTags* - a list of POS tags identified in the sentence
 - *constituencyParse* - a Constituency Parse Tree where each node contains a *label* and list of *children*
 
-###Example
+### Example
 Request  
 `curl -XPOST localhost:8080/parse?text=The%20quick%20brown%20fox%20jumped%20over%20the%20lazy%20dog`
 
