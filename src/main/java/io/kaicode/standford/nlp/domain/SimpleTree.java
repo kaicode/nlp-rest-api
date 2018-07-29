@@ -2,6 +2,7 @@ package io.kaicode.standford.nlp.domain;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.ling.Label;
 import edu.stanford.nlp.trees.LabeledScoredTreeNode;
 import edu.stanford.nlp.trees.Tree;
 
@@ -21,16 +22,31 @@ public class SimpleTree {
 	private final String text;
 
 	public SimpleTree(Tree constituencyParse) {
-		LabeledScoredTreeNode trees = (LabeledScoredTreeNode) constituencyParse;
 		CoreLabel label = (CoreLabel) constituencyParse.label();
 		tag = label.tag();
 		// Only set category if no POS tag present to prevent duplicate information
 		category = tag != null ? null : label.category();
 		String text = label.originalText();
-		this.text = text != null && !text.isEmpty() ? text : null;
-		if (constituencyParse.children() != null) {
-			this.children = Arrays.stream(constituencyParse.children()).map(SimpleTree::new).collect(Collectors.toList());
+		Tree[] children = constituencyParse.children();
+
+		// Only copy children if they are necessary, otherwise just copy the single child's text.
+		boolean flattenChild = false;
+		if (children != null) {
+			if ((text == null || text.isEmpty()) && children.length == 1 && tag != null) {
+				Tree child = children[0];
+				CoreLabel childLabel = (CoreLabel) child.label();
+				flattenChild = child.children().length == 0 && tag.equals(childLabel.tag());
+			}
+			if (flattenChild) {
+				text = ((CoreLabel) children[0].label()).originalText();
+			} else {
+				List<SimpleTree> childList = Arrays.stream(children).map(SimpleTree::new).collect(Collectors.toList());
+				if (!childList.isEmpty()) {
+					this.children = childList;
+				}
+			}
 		}
+		this.text = text != null && !text.isEmpty() ? text : null;
 	}
 
 	public String getTag() {
@@ -46,6 +62,6 @@ public class SimpleTree {
 	}
 
 	public List<SimpleTree> getChildren() {
-		return children.isEmpty() ? null : children;
+		return children;
 	}
 }

@@ -42,39 +42,19 @@ Response
               "children": [
                 {
                   "tag": "DT",
-                  "children": [
-                    {
-                      "tag": "DT",
-                      "text": "The"
-                    }
-                  ]
+                  "text": "The"
                 },
                 {
                   "tag": "JJ",
-                  "children": [
-                    {
-                      "tag": "JJ",
-                      "text": "quick"
-                    }
-                  ]
+                  "text": "quick"
                 },
                 {
                   "tag": "JJ",
-                  "children": [
-                    {
-                      "tag": "JJ",
-                      "text": "brown"
-                    }
-                  ]
+                  "text": "brown"
                 },
                 {
                   "tag": "NN",
-                  "children": [
-                    {
-                      "tag": "NN",
-                      "text": "fox"
-                    }
-                  ]
+                  "text": "fox"
                 }
               ]
             },
@@ -83,54 +63,29 @@ Response
               "children": [
                 {
                   "tag": "VBD",
-                  "children": [
-                    {
-                      "tag": "VBD",
-                      "text": "jumped"
-                    }
-                  ]
+                  "text": "jumped"
                 },
                 {
                   "category": "PP",
                   "children": [
                     {
                       "tag": "IN",
-                      "children": [
-                        {
-                          "tag": "IN",
-                          "text": "over"
-                        }
-                      ]
+                      "text": "over"
                     },
                     {
                       "category": "NP",
                       "children": [
                         {
                           "tag": "DT",
-                          "children": [
-                            {
-                              "tag": "DT",
-                              "text": "the"
-                            }
-                          ]
+                          "text": "the"
                         },
                         {
                           "tag": "JJ",
-                          "children": [
-                            {
-                              "tag": "JJ",
-                              "text": "lazy"
-                            }
-                          ]
+                          "text": "lazy"
                         },
                         {
                           "tag": "NN",
-                          "children": [
-                            {
-                              "tag": "NN",
-                              "text": "dog"
-                            }
-                          ]
+                          "text": "dog"
                         }
                       ]
                     }
