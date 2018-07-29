@@ -42,7 +42,6 @@ Response
               "children": [
                 {
                   "tag": "DT",
-                  "category": "DT",
                   "children": [
                     {
                       "tag": "DT",
@@ -52,7 +51,6 @@ Response
                 },
                 {
                   "tag": "JJ",
-                  "category": "JJ",
                   "children": [
                     {
                       "tag": "JJ",
@@ -62,7 +60,6 @@ Response
                 },
                 {
                   "tag": "JJ",
-                  "category": "JJ",
                   "children": [
                     {
                       "tag": "JJ",
@@ -72,7 +69,6 @@ Response
                 },
                 {
                   "tag": "NN",
-                  "category": "NN",
                   "children": [
                     {
                       "tag": "NN",
@@ -87,7 +83,6 @@ Response
               "children": [
                 {
                   "tag": "VBD",
-                  "category": "VBD",
                   "children": [
                     {
                       "tag": "VBD",
@@ -100,7 +95,6 @@ Response
                   "children": [
                     {
                       "tag": "IN",
-                      "category": "IN",
                       "children": [
                         {
                           "tag": "IN",
@@ -113,7 +107,6 @@ Response
                       "children": [
                         {
                           "tag": "DT",
-                          "category": "DT",
                           "children": [
                             {
                               "tag": "DT",
@@ -123,7 +116,6 @@ Response
                         },
                         {
                           "tag": "JJ",
-                          "category": "JJ",
                           "children": [
                             {
                               "tag": "JJ",
@@ -133,7 +125,6 @@ Response
                         },
                         {
                           "tag": "NN",
-                          "category": "NN",
                           "children": [
                             {
                               "tag": "NN",

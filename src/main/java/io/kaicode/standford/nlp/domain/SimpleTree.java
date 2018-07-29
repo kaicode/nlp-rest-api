@@ -24,7 +24,8 @@ public class SimpleTree {
 		LabeledScoredTreeNode trees = (LabeledScoredTreeNode) constituencyParse;
 		CoreLabel label = (CoreLabel) constituencyParse.label();
 		tag = label.tag();
-		category = label.category();
+		// Only set category if no POS tag present to prevent duplicate information
+		category = tag != null ? null : label.category();
 		String text = label.originalText();
 		this.text = text != null && !text.isEmpty() ? text : null;
 		if (constituencyParse.children() != null) {
